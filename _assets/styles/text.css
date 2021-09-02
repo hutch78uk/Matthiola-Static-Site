@@ -1,0 +1,35 @@
+.text--12 {
+    font-size: 0.75rem !important;
+}
+
+.text-18 {
+    font-size: 1.125rem !important;
+}
+
+.text-20 {
+    font-size: 1.25rem !important;
+}
+
+.text-24 {
+    font-size: 1.5rem !important;
+}
+
+.text-28 {
+    font-size: 1.75rem !important;
+}
+
+.text-32 {
+    font-size: 2rem !important;
+}
+
+.text-white {
+	color: #fff !important;
+}
+
+.text-glow {
+	text-shadow:0 0 20px #000000 !important;
+}
+
+.text-bold {
+	font-weight: bold !important;
+}
