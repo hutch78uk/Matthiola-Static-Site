@@ -214,6 +214,13 @@ body {
 		right: 0;
 	}
 
+	.content-page {
+		background-color: #fff;
+		border: 2px solid #fe7200;
+		border-radius: 5px;
+		padding: 30px;
+	}
+
 	footer {
 	    background-color: #000;
 	    border-top: 1px solid #fff;
