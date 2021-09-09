@@ -179,10 +179,16 @@ body {
 		border: 1px solid #FE7200;
 		padding: 20px;
 		width: 100%;
+		align-items: flex-start;
 	}
 
 	.content-box p {
 		margin-bottom: 40px;
+	}
+
+	.content-box img {
+		height: auto;
+		width:100%;
 	}
 
 	.button {
