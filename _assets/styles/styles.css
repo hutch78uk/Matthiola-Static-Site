@@ -152,6 +152,9 @@ body {
 	}
 
 	/* END Bespoke header */
+	h1 {
+		color: #fe7200;
+	}
 
 	h1.hero {
 		color: #fff;
@@ -167,6 +170,10 @@ body {
 	h1.hero span {
 	    font-size: 2.25rem;
 	    line-height: 55px;
+	}
+
+	.border-bottom--orange {
+		border-bottom: 1px solid #fe7200;
 	}
 
 	.associates img {
@@ -219,6 +226,20 @@ body {
 		border: 2px solid #fe7200;
 		border-radius: 5px;
 		padding: 30px;
+	}
+
+	.submit-btn {
+		background-color: #fe7200;
+		border-radius: 5px;
+		color: #fff;
+		cursor: pointer;
+		padding: 10px 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	.submit-btn:hover {
+		background-color: #fd0002;
 	}
 
 	footer {
