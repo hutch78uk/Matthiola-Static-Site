@@ -1,16 +1,14 @@
 $(document).ready(function() {
-//$('').css('', '');
-//$('').css({'':'', '':''});
 	$('div.submit-btn').click(function() {
-		alert("working");
+
 		var ageTeam = $('input#age-team').val();
 		var name = $('input#name').val();
-		var address = $('input#address').val();
+		var address = $('textarea#address').val();
 		var postcode = $('input#postcode').val();
 		var dob = $('input#dob').val();
 		var school = $('input#school').val();
 		var parentName = $('input#parent-name').val();
-		var parentAddress = $('input#parent-address').val();
+		var parentAddress = $('textarea#parent-address').val();
 		var parentPostcode = $('input#parent-postcode').val();
 		var number = $('input#phone').val();
 		var email = $('input#email').val();
@@ -25,47 +23,96 @@ $(document).ready(function() {
 		var parentAddressValidate = false;
 		var parentPostcodeValidate = false;
 		var numberValidate = false;
-		var emailValidate = false;
+		var emailValidate = true;
+
+		if (ageTeam.length > 0) {
+			$('input#age-team').css({'border':'1px solid #666'});
+			$('span.error.age-team').css('display', 'none');
+			ageTeamValidate = true;
+		} else {
+			$('input#age-team').css({'border':'1px solid red'});
+			$('span.error.age-team').css('display', 'block');
+			ageTeamValidate = false;
+		}
 
 		if (name.length > 0) {
-			$('input.name').css({'border-color':'#e1e3e3', 'margin-bottom':'10px'});
+			$('input#name').css({'border':'1px solid #666'});
 			$('span.error.name').css('display', 'none');
 			nameValidate = true;
 		} else {
-			$('input.name').css({'border-color':'red', 'margin-bottom':'0'});
+			$('input#name').css({'border':'1px solid red'});
 			$('span.error.name').css('display', 'block');
 			nameValidate = false;
 		}
-		/*
-		if (number.length > 0) {
-			$('input.number').css({'border-color':'#e1e3e3', 'margin-bottom':'10px'});
-			$('span.error.number').css('display', 'none');
-			numberValidate = true;
+
+		if (address.length > 0) {
+			$('textarea#address').css({'border':'1px solid #666'});
+			$('span.error.address').css('display', 'none');
+			addressValidate = true;
 		} else {
-			$('input.number').css({'border-color':'red', 'margin-bottom':'0'});
-			$('span.error.number').css('display', 'block');
-			numberValidate = false;
+			$('textarea#address').css({'border':'1px solid red'});
+			$('span.error.address').css('display', 'block');
+			addressValidate = false;
 		}
 
-		if (email.length > 0) {
-			$('input.email').css({'border-color':'#e1e3e3', 'margin-bottom':'10px'});
-			$('p.error.email').css('display', 'none');
-			emailValidate = true;
+		if (postcode.length > 0) {
+			$('input#postcode').css({'border':'1px solid #666'});
+			$('span.error.postcode').css('display', 'none');
+			postcodeValidate = true;
 		} else {
-			$('input.email').css({'border-color':'red', 'margin-bottom':'0'});
-			$('p.error.email').css('display', 'block');
-			emailValidate = false;
+			$('input#postcode').css({'border':'1px solid red'});
+			$('span.error.postcode').css('display', 'block');
+			postcodeValidate = false;
 		}
-		*/
 
-		if (message.length > 0) {
-			$('textarea.message').css({'border-color':'#e1e3e3', 'margin-bottom':'10px'});
-			$('span.error.message').css('display', 'none');
-			messageValidate = true;
+		if (dob.length > 0) {
+			$('input#dob').css({'border':'1px solid #666'});
+			$('span.error.dob').css('display', 'none');
+			dobValidate = true;
 		} else {
-			$('textarea.message').css({'border-color':'red', 'margin-bottom':'0'});
-			$('span.error.message').css('display', 'block');
-			messageValidate = false;
+			$('input#dob').css({'border':'1px solid red'});
+			$('span.error.dob').css('display', 'block');
+			dobValidate = false;
+		}
+
+		if (school.length > 0) {
+			$('input#school').css({'border':'1px solid #666'});
+			$('span.error.school').css('display', 'none');
+			schoolValidate = true;
+		} else {
+			$('input#school').css({'border':'1px solid red'});
+			$('span.error.school').css('display', 'block');
+			schoolValidate = false;
+		}
+
+		if (parentName.length > 0) {
+			$('input#parent-name').css({'border':'1px solid #666'});
+			$('span.error.parent-name').css('display', 'none');
+			parentNameValidate = true;
+		} else {
+			$('input#parent-name').css({'border':'1px solid red'});
+			$('span.error.parent-name').css('display', 'block');
+			parentNameValidate = false;
+		}
+
+		if (parentAddress.length > 0) {
+			$('textarea#parent-address').css({'border':'1px solid #666'});
+			$('span.error.parent-address').css('display', 'none');
+			parentAddressValidate = true;
+		} else {
+			$('textarea#parent-address').css({'border':'1px solid red'});
+			$('span.error.parent-address').css('display', 'block');
+			parentAddressValidate = false;
+		}
+
+		if (parentPostcode.length > 0) {
+			$('input#parent-postcode').css({'border':'1px solid #666'});
+			$('span.error.parent-postcode').css('display', 'none');
+			parentPostcodeValidate = true;
+		} else {
+			$('input#parent-postcode').css({'border':'1px solid red'});
+			$('span.error.parent-postcode').css('display', 'block');
+			parentPostcodeValidate = false;
 		}
 
 	/*--- PHONE VALIDATION ---*/
@@ -81,23 +128,21 @@ $(document).ready(function() {
 		}
 
 		if (number.length == 0) {
-			$('input.number').css({'border-color':'red', 'margin-bottom':'0'});
+			$('input#phone').css({'border':'1px solid red'});
 			$('span.error.number').css('display', 'block');
 			$('span.error.number2').css('display', 'none');
 			numberValidate = false;
-		} else if (validatePhone('phone-number') != true) {
-	       	$('input.number').css({'border-color':'red', 'margin-bottom':'0'});
+		} else if (validatePhone('phone') != true) {
+	       	$('input#phone').css({'border':'1px solid red'});
 			$('span.error.number2').css('display', 'block');
 			$('span.error.number').css('display', 'none');
 			numberValidate = false;
 	   	} else {
-	      	$('input.number').css({'border-color':'#e1e3e3', 'margin-bottom':'10px'});
+	      	$('input#phone').css({'border':'1px solid #666'});
 			$('span.error.number').css('display', 'none');
 			$('span.error.number2').css('display', 'none');
 			numberValidate = true;
 	   	}
-
-
 	/*--- END PHONE VALIDATION ---*/
 
 	/*--- EMAIL VALIDATION ---*/
@@ -113,43 +158,39 @@ $(document).ready(function() {
 		}
 
 		if ($.trim(email).length == 0) {
-			$('input.email').css({'border-color':'red', 'margin-bottom':'0'});
+			$('input#email').css({'border':'1px solid red'});
 			$('span.error.email').css('display', 'block');
 			$('span.error.email2').css('display', 'none');
 			emailValidate = false;
 		} else if (validateEmail(email) != true) {
-			$('input.email').css({'border-color':'red', 'margin-bottom':'0'});
+			$('input#email').css({'border':'1px solid red'});
 			$('span.error.email2').css('display', 'block');
 			$('span.error.email').css('display', 'none');
 			emailValidate = false;
 		} else {
-			$('input.email').css({'border-color':'#e1e3e3', 'margin-bottom':'10px'});
+			$('input#email').css({'border':'1px solid #666'});
 			$('span.error.email').css('display', 'none');
 			$('span.error.email2').css('display', 'none');
 			emailValidate = true;
 		}
-
 	/*--- END EMAIL VALIDATION ---*/
-		/*
-		alert('name is ' + nameValidate);
-		alert('number is ' + numberValidate);
-		alert('email is ' + emailValidate);
-		alert('message is ' + messageValidate);
-		*/
 
-		if (nameValidate === false && numberValidate === false && emailValidate === false) {
-			//alert("form submitted");
+		console.log(ageTeamValidate, nameValidate, addressValidate, postcodeValidate, dobValidate, schoolValidate, parentNameValidate, parentAddressValidate, parentPostcodeValidate, numberValidate, emailValidate);
 
-			var varData = 'age group and team= ' + ageTeam + ' & name= ' + name + ' & address= ' + address + ' & postcode= ' + postcode + ' & date of birth= ' + dob + ' & school= ' + school + ' & parent name= ' + parentName + ' & parent address= ' + parentAddress + ' & parent postcode= ' + parentPostcode + ' & phone number= ' + number + ' & email= ' + email;
+		if (ageTeamValidate === true && nameValidate === true && addressValidate === true && postcodeValidate === true && dobValidate === true && schoolValidate === true && parentNameValidate === true && parentAddressValidate === true && parentPostcodeValidate === true && numberValidate === true && emailValidate === true) {
+			console.log("form submitted");
+
+			var varData = 'ageTeam= ' + ageTeam + ' & name= ' + name + ' & address= ' + address + ' & postcode= ' + postcode + ' & dob= ' + dob + ' & school= ' + school + ' & parentName= ' + parentName + ' & parentAddress= ' + parentAddress + ' & parentPostcode= ' + parentPostcode + ' & number= ' + number + ' & email= ' + email;
 			console.log(varData);
 
 			$.ajax({
 				type: "POST",
 				url:'form-process.php',
 				data: varData,
+				cache: false,
 				success: function() {
 					//alert("Post successful");
-					$('div.contact-form').css('display', 'none');
+					$('div.registration-form').css('display', 'none');
 					$('div.thankyou-message').css('display', 'block');
 				}
 			});
