@@ -44,10 +44,11 @@ Email Address:".$email."
 
 $headers = "From: Matthiola Junior Football Club";
 
-// Notification email to client
-mail($email, 'Thank you for registering with Matthiola Junior Football Club', $email_thankyou, $headers);
+if ($ageTeam != '' && $name != '' && $address != '' && $postcode != '' && $dob != '' && $school != '') {
+    // Notification email to client
+    mail($email, 'Thank you for registering with Matthiola Junior Football Club', $email_thankyou, $headers);
 
-// Notification email to Matthiola
-mail('hutch78uk@yahoo.com', 'Player Registration', $email_alert, $headers);
-
+    // Notification email to Matthiola
+    mail('hutch78uk@yahoo.com', 'Player Registration', $email_alert, $headers);
+}
 ?>
