@@ -42,7 +42,10 @@ Contact number:".$number."
 Email Address:".$email."
 ";
 
-$headers = "From: Matthiola Junior Football Club";
+$headers = 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+// Additional headers
+// $headers .= 'From: MyCompany <abc@mycompany.com>' . "\r\n";
+$headers = 'From: Matthiola Junior Football Club' . "\r\n";
 
 if ($ageTeam != '' && $name != '' && $address != '' && $postcode != '' && $dob != '' && $school != '') {
     // Notification email to client
